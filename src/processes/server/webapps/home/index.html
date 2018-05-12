@@ -12,11 +12,16 @@
             <input id="name" type="text" placeholder="Business Name">
             <input id="address" type="text" placeholder="Address">
             <input id="contact-name" type="text" placeholder="Contact name">
-            <input id="contact-number" type="telephone" placeholder="Contact number">
+            <input id="contact-number" type="number" placeholder="Contact number">
             <textarea name="commentary" id="commentary" placeholder="Commentary"></textarea>
+            <label id="has"><input type="checkbox" name="own TV" id="own-tv">Has own TV?</label>
+            <input id="amount" type="number" placeholder="Screens amount">
             <select id="device" name="device" id="device-type">
                 <option value="0">Dumb TV</option>
                 <option value="1">Smart TV</option>
+                <option value="2">WebOS</option>
+                <option value="3">Android TV</option>
+                <option value="4">Tizen</option>
             </select>
             <button id="submit" class="btn-submit" onclick="saveBusiness()">Save</button>
         </div>

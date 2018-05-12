@@ -1,5 +1,5 @@
 import q from 'q';
-import {isNull, isNumber, isString} from 'underscore';
+import {isNull, isNumber, isString, isBoolean} from 'underscore';
 
 export default (context, next, finish) => {
   let body = context.req.body;
@@ -11,6 +11,9 @@ export default (context, next, finish) => {
     }
     else if (isNumber(value)) {
       body[key] = Number(value);
+    }
+    else if (isBoolean(value)) {
+      body[key] = Boolean(value);
     }
     else if (isString(value)) {
       body[key] = String(value);

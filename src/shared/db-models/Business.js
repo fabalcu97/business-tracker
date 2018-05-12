@@ -15,6 +15,8 @@ export class BusinessModel extends MongoModel {
               contactNumber: { type: 'string' },
               contactName: { type: 'string' },
               commentary: { type: 'string' },
+              hasOwnTv: { type: 'string' },
+              screensAmount: { type: 'string' },
               deviceType: { type: 'string' }, // 0 - Dumb, 1 - Smart
             },
             required: []
