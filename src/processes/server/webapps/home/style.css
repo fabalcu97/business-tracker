@@ -1,0 +1,13 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+input, textarea, select {
+  border: 1px solid gray;
+  padding: 5%;
+}
+.btn-submit {
+  height: 50px;
+  border: 1px solid black;
+  margin-top: 10px;
+}

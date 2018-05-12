@@ -1,7 +1,26 @@
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="./script.js"></script>
+    </head>
 
     <body>
-        <h1>Hello World!</h1>
+        <h1>Business Tracker</h1>
+        <div class="form">
+            <input id="name" type="text" placeholder="Business Name">
+            <input id="address" type="text" placeholder="Address">
+            <input id="contact-name" type="text" placeholder="Contact name">
+            <input id="contact-number" type="telephone" placeholder="Contact number">
+            <textarea name="commentary" id="commentary" placeholder="Commentary"></textarea>
+            <select id="device" name="device" id="device-type">
+                <option value="0">Dumb TV</option>
+                <option value="1">Smart TV</option>
+            </select>
+            <button id="submit" class="btn-submit" onclick="saveBusiness()">Save</button>
+        </div>
+        <span id="loader"></span>
     </body>
 
 </html>
