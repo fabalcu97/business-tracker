@@ -1,7 +1,7 @@
 
 vars:
     httpPort: 8000
-
+    dbUrl: 'mongodb://root:root@ds115752.mlab.com:15752/ideascloud-test'
 httpServers:
     -   name: 'server'
         ports:
@@ -17,7 +17,7 @@ httpServers:
                     -   method: 'GET'
                         path: '/'
                         pipeline:
-                            -   staticsPath: '$demo-webapp'
+                            -   staticsPath: '$business-tracker'
 
             -   name: 'api'
                 description: 'API Router'
@@ -25,7 +25,15 @@ httpServers:
                 routes:
 
                     # Demo service
-                    -   method: 'GET'
-                        path: '/demo'
+                    -   method: 'POST'
+                        path: '/business'
                         pipeline:
-                            -   handler: '$demo-handler'
+                            -   handler: '$bodyParserHandler'
+                            -   handler: '$modelMongoTransactionHandler'
+                                params:
+                                    db: '$mongoDb'
+                                    model: '$models/Business'
+                                    resolveRoute: true
+                                    transaction: 'register'
+                                    transactionParams:
+                                        - '&body'
